@@ -1,0 +1,15 @@
+---
+- name: Collect Windows VM Specs
+  hosts: all
+  gather_facts: yes
+
+  tasks:
+
+    - name: Show VM specs
+      debug:
+        msg:
+          - "Hostname: {{ ansible_hostname }}"
+          - "OS: {{ ansible_os_name }}"
+          - "CPU Cores: {{ ansible_processor_vcpus }}"
+          - "RAM MB: {{ ansible_memtotal_mb }}"
+          - "IP Addresses: {{ ansible_ip_addresses }}"
